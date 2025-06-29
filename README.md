@@ -5,13 +5,13 @@ A React component that displays GitHub contribution graphs in your web applicati
 ## Installation
 
 ```bash
-npm install green-graph
+npm install react-green-graph
 ```
 
 ## Usage
 
 ```jsx
-import ContributionGraph from "green-graph";
+import ContributionGraph from "react-green-graph";
 
 function App() {
   return (
@@ -33,14 +33,6 @@ function App() {
 ### Custom Colors Example
 
 ```jsx
-const customColors = {
-  0: "#ebedf0", // No contributions
-  1: "#c6e48b", // 1-3 contributions
-  2: "#7bc96f", // 4-6 contributions
-  5: "#239a3b", // 7-9 contributions
-  10: "#196127", // 10+ contributions
-};
-
 <ContributionGraph
   username="your-username"
   token="your-token"
