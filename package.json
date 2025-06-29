@@ -1,14 +1,21 @@
 {
-  "name": "green-graph",
+  "name": "@theamrendram/react-green-graph",
   "version": "0.0.1",
+  "description": "A simple React component to embed GitHub-style contribution graphs in your web app.",
   "main": "dist/green-graph.umd.js",
   "module": "dist/green-graph.es.js",
+  "types": "dist/index.d.ts",
   "type": "module",
-  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/green-graph.es.js",
+      "require": "./dist/green-graph.umd.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "files": [
     "dist",
-    "index.d.ts",
-    "src/**/*"
+    "index.d.ts"
   ],
   "scripts": {
     "test": "echo \"No tests specified\"",
@@ -43,9 +50,7 @@
     "email": "amrendramkumar@gmail.com",
     "url": "https://github.com/theamrendram"
   },
-
   "license": "MIT",
-  "description": "This is a simple library that let's you integrate github contribution graph into your webapp",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/theamrendram/react-green-graph.git"
