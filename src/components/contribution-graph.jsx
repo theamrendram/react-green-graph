@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import getColor from "../lib/get-color";
 import { fetchContributions } from "../api/github";
 import { colors } from "../lib/constants";
+import "../styles/index.css";
 
 const ContributionGraph = ({ username, token }) => {
   const [hoveredDay, setHoveredDay] = useState(null);
@@ -291,6 +293,11 @@ const ContributionGraph = ({ username, token }) => {
       </div>
     </div>
   );
+};
+
+ContributionGraph.propTypes = {
+  username: PropTypes.string.isRequired,
+  token: PropTypes.string.isRequired,
 };
 
 export default ContributionGraph;

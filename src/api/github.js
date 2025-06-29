@@ -12,9 +12,9 @@ const fetchContributions = async (username, token) => {
     },
     body: JSON.stringify({
       query: `
-        query {
-          user(login: "${username}") {
-            contributionsCollection(from: "${from}", to: "${to}") {
+        query($username: String!, $from: DateTime!, $to: DateTime!) {
+          user(login: $username) {
+            contributionsCollection(from: $from, to: $to) {
               contributionCalendar {
                 totalContributions
                 weeks {
@@ -32,10 +32,29 @@ const fetchContributions = async (username, token) => {
           }
         }
       `,
+      variables: {
+        username,
+        from,
+        to,
+      },
     }),
   });
 
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`HTTP ${response.status}: ${errorText}`);
+  }
+
   const data = await response.json();
+
+  if (data.errors) {
+    throw new Error(data.errors[0]?.message || "GraphQL query failed");
+  }
+
+  if (!data.data?.user) {
+    throw new Error("User not found");
+  }
+
   return data.data.user.contributionsCollection;
 };
 
