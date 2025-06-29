@@ -1,0 +1,57 @@
+{
+  "name": "green-graph",
+  "version": "0.0.1",
+  "main": "dist/green-graph.umd.js",
+  "module": "dist/green-graph.es.js",
+  "type": "module",
+  "types": "index.d.ts",
+  "files": [
+    "dist",
+    "index.d.ts",
+    "src/**/*"
+  ],
+  "scripts": {
+    "test": "echo \"No tests specified\"",
+    "build": "vite build",
+    "dev": "vite build --watch",
+    "preview": "vite preview",
+    "watch": "vite build --watch --mode development",
+    "prepare": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "vite": "^7.0.0",
+    "@vitejs/plugin-react": "^4.5.2"
+  },
+  "keywords": [
+    "github",
+    "contribution",
+    "graph",
+    "integration",
+    "react",
+    "component",
+    "github-api"
+  ],
+  "author": {
+    "name": "Kumar Amrendram",
+    "email": "amrendramkumar@gmail.com",
+    "url": "https://github.com/theamrendram"
+  },
+
+  "license": "MIT",
+  "description": "This is a simple library that let's you integrate github contribution graph into your webapp",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theamrendram/react-green-graph.git"
+  },
+  "bugs": {
+    "url": "https://github.com/theamrendram/react-green-graph/issues"
+  },
+  "homepage": "https://github.com/theamrendram/react-green-graph#readme"
+}

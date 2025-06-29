@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.contribution-graph {
+  padding: 20px;
+}
+
+.contribution-graph .legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.legend .legend-text {
+  font-size: 12px;
+  color: #586069;
+}
+
+.legend .legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.day-labels {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-right: 8px;
+}
+
+.day-labels .day-label {
+  height: 12px;
+  font-size: 10px;
+  color: #586069;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+}
+
+.contribution-grid {
+  display: flex;
+  gap: 3px;
+}
+
+.contribution-grid .week-column {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.contribution-day {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: #24292e;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  z-index: 1000;
+  pointer-events: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  white-space: nowrap;
+}
