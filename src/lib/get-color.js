@@ -1,6 +1,12 @@
 import { colors as defaultColors } from "./constants";
 
 const getColor = (contributionCount, colors = defaultColors) => {
+  console.log("getColor called with:", {
+    contributionCount,
+    colors,
+    isArray: Array.isArray(colors),
+  });
+
   // Handle array format (5 colors)
   if (Array.isArray(colors)) {
     if (contributionCount === 0) {
@@ -18,7 +24,7 @@ const getColor = (contributionCount, colors = defaultColors) => {
     }
   }
 
-  // Handle object format (existing behavior)
+  // Handle object format (matching the colorMap structure from component)
   if (contributionCount === 0) {
     return colors[0]; // No contributions
   } else if (contributionCount >= 1 && contributionCount <= 3) {
@@ -26,9 +32,9 @@ const getColor = (contributionCount, colors = defaultColors) => {
   } else if (contributionCount >= 4 && contributionCount <= 6) {
     return colors[2]; // Medium green for 4-6 contributions
   } else if (contributionCount >= 7 && contributionCount <= 9) {
-    return colors[5]; // Dark green for 7-9 contributions
+    return colors[3]; // Dark green for 7-9 contributions
   } else if (contributionCount >= 10) {
-    return colors[10]; // Darkest green for 10+ contributions
+    return colors[4]; // Darkest green for 10+ contributions
   } else {
     return colors[0]; // Default fallback
   }

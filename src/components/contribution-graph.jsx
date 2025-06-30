@@ -18,8 +18,8 @@ const ReactGreenGraph = ({ username, token, colors = defaultColors }) => {
         0: colors[0] || "#ebedf0", // No contributions
         1: colors[1] || "#c6e48b", // 1-3 contributions
         2: colors[2] || "#7bc96f", // 4-6 contributions
-        5: colors[3] || "#239a3b", // 7-9 contributions
-        10: colors[4] || "#196127", // 10+ contributions
+        3: colors[3] || "#239a3b", // 7-9 contributions
+        4: colors[4] || "#196127", // 10+ contributions
       }
     : colors;
 
