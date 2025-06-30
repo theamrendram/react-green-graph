@@ -6,7 +6,7 @@ import { fetchContributions } from "../api/github";
 import { colors as defaultColors } from "../lib/constants";
 import "../styles/index.css";
 
-const ContributionGraph = ({ username, token, colors = defaultColors }) => {
+const ReactGreenGraph = ({ username, token, colors = defaultColors }) => {
   const [hoveredDay, setHoveredDay] = useState(null);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
@@ -306,10 +306,10 @@ const ContributionGraph = ({ username, token, colors = defaultColors }) => {
   );
 };
 
-ContributionGraph.propTypes = {
+ReactGreenGraph.propTypes = {
   username: PropTypes.string.isRequired,
   token: PropTypes.string.isRequired,
   colors: PropTypes.arrayOf(PropTypes.string),
 };
 
-export default ContributionGraph;
+export default ReactGreenGraph;

@@ -1,12 +1,12 @@
 import React from "react";
 
-export interface ContributionGraphProps {
+export interface ReactGreenGraphProps {
   username: string;
   token: string;
   colors?: string[];
 }
 
-export interface ContributionData {
+export interface ReactGreenGraphData {
   contributionCalendar: {
     totalContributions: number;
     weeks: Array<{
@@ -22,6 +22,6 @@ export interface ContributionData {
   totalIssueContributions: number;
 }
 
-export default function ContributionGraph(
-  props: ContributionGraphProps
+export default function ReactGreenGraph(
+  props: ReactGreenGraphProps
 ): React.JSX.Element;

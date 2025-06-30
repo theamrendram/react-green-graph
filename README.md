@@ -13,11 +13,11 @@ npm install @theamrendram/react-green-graph
 ### Basic Usage
 
 ```jsx
-import ContributionGraph from "@theamrendram/react-green-graph";
+import ReactGreenGraph from "@theamrendram/react-green-graph";
 
 function App() {
   return (
-    <ContributionGraph
+    <ReactGreenGraph
       username="your-github-username"
       token="your-github-personal-access-token"
     />
@@ -30,7 +30,7 @@ function App() {
 You can customize the contribution graph colors by passing a `colors` prop with an array of 5 hex colors:
 
 ```jsx
-import ContributionGraph from "@theamrendram/react-green-graph";
+import ReactGreenGraph from "@theamrendram/react-green-graph";
 
 function App() {
   // Custom color array (5 colors)
@@ -43,7 +43,7 @@ function App() {
   ];
 
   return (
-    <ContributionGraph
+    <ReactGreenGraph
       username="your-github-username"
       token="your-github-personal-access-token"
       colors={customColors}
