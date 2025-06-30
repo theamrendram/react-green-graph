@@ -3,14 +3,25 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import getColor from "../lib/get-color";
 import { fetchContributions } from "../api/github";
-import { colors } from "../lib/constants";
+import { colors as defaultColors } from "../lib/constants";
 import "../styles/index.css";
 
-const ContributionGraph = ({ username, token }) => {
+const ContributionGraph = ({ username, token, colors = defaultColors }) => {
   const [hoveredDay, setHoveredDay] = useState(null);
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  // Convert colors array to the expected format for getColor function
+  const colorMap = Array.isArray(colors)
+    ? {
+        0: colors[0] || "#ebedf0", // No contributions
+        1: colors[1] || "#c6e48b", // 1-3 contributions
+        2: colors[2] || "#7bc96f", // 4-6 contributions
+        5: colors[3] || "#239a3b", // 7-9 contributions
+        10: colors[4] || "#196127", // 10+ contributions
+      }
+    : colors;
 
   const fetchData = async () => {
     try {
@@ -207,7 +218,7 @@ const ContributionGraph = ({ username, token }) => {
     <div className="contribution-graph">
       <div className="legend">
         <span className="legend-text">Less</span>
-        {Object.values(colors).map((color, index) => (
+        {Object.values(colorMap).map((color, index) => (
           <div
             key={index}
             style={{
@@ -249,7 +260,7 @@ const ContributionGraph = ({ username, token }) => {
                 <div
                   key={`${weekIndex}-${dayIndex}`}
                   style={{
-                    backgroundColor: getColor(day.contributionCount, colors),
+                    backgroundColor: getColor(day.contributionCount, colorMap),
                     border:
                       hoveredDay === `${weekIndex}-${dayIndex}`
                         ? "1px solid #000"
@@ -298,6 +309,7 @@ const ContributionGraph = ({ username, token }) => {
 ContributionGraph.propTypes = {
   username: PropTypes.string.isRequired,
   token: PropTypes.string.isRequired,
+  colors: PropTypes.arrayOf(PropTypes.string),
 };
 
 export default ContributionGraph;

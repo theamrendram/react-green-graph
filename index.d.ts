@@ -3,6 +3,7 @@ import React from "react";
 export interface ContributionGraphProps {
   username: string;
   token: string;
+  colors?: string[];
 }
 
 export interface ContributionData {

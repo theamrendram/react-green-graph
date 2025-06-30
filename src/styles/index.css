@@ -86,3 +86,17 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   white-space: nowrap;
 }
+@media (max-width: 768px) {
+  .contribution-graph {
+    background-color: #fff !important;
+  }
+
+  .contribution-grid {
+    gap: 2px !important;
+  }
+
+  .contribution-day {
+    width: 10px !important;
+    height: 10px !important;
+  }
+}
